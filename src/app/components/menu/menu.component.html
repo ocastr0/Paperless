@@ -1,0 +1,93 @@
+<!-- Container Principal -->
+<div class="hero-container">
+  
+  <!-- Header/Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <div class="logo-section">
+        <mat-icon class="logo-icon">description</mat-icon>
+        <span class="logo-text">Paperless</span>
+      </div>
+    </div>
+    
+    <div class="navbar-right">
+        <button mat-button class="nav-link">Início</button>
+        <button mat-button class="nav-link">Recursos</button>
+        <button mat-button class="nav-link">Sobre</button>
+      
+      <div class="profile-menu">
+        <div class="profile-circle">
+          <mat-icon>person</mat-icon>
+        </div>
+        <span class="user-name">{{ userName }}</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <section class="hero-content" @fadeInUp>
+    <div class="content-left">
+      <h1 class="hero-title">
+        Converta suas imagens em
+        <span class="highlight">Talonários Digitais</span>
+      </h1>
+      
+      <p class="hero-description">
+        Transforme documentos físicos em formulários digitais inteligentes. 
+        Rápido, seguro e totalmente automatizado.
+      </p>
+      
+      <div class="cta-buttons">
+        <button mat-raised-button class="btn-primary" (click)="goToUpload()">
+          <mat-icon>cloud_upload</mat-icon>
+          Converter Agora
+        </button>
+        <button mat-stroked-button class="btn-secondary" (click)="goToHistorico()">
+          <mat-icon>history</mat-icon>
+          Histórico
+        </button>
+      </div>
+
+      <div class="features-quick">
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>Upload instantâneo</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>IA de precisão</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>100% seguro</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área da Imagem/Ilustração -->
+    <div class="content-right">
+      <div class="image-container">
+        <div class="floating-card card-1">
+          <mat-icon>image</mat-icon>
+          <span>JPG</span>
+        </div>
+        <div class="floating-card card-2">
+          <mat-icon>description</mat-icon>
+          <span>PDF</span>
+        </div>
+        <div class="floating-card card-3">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>DOC</span>
+        </div>
+        
+        <div class="main-visual">
+          <div class="visual-circle">
+            <mat-icon class="visual-icon">transform</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+</div>

@@ -1,0 +1,63 @@
+<div class="historico-container">
+  <!-- Header -->
+  <header class="historico-header">
+    <button mat-icon-button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="header-content">
+      <h1>Histórico de Conversões</h1>
+      <p>Visualize todas as suas conversões anteriores</p>
+    </div>
+    <button mat-raised-button class="new-button" (click)="newConversion()">
+      <mat-icon>add</mat-icon>
+      Nova Conversão
+    </button>
+  </header>
+
+  <!-- Content -->
+  <div class="historico-content">
+    <!-- Última Conversão -->
+    <section class="recent-section" *ngIf="recentImages.length > 0">
+      <h2>Última Conversão</h2>
+      <div class="recent-grid">
+        <div class="recent-card" *ngFor="let img of recentImages">
+          <img [src]="img.preview" [alt]="img.name">
+          <div class="card-info">
+            <p>{{ img.name }}</p>
+            <mat-icon>check_circle</mat-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de Histórico -->
+    <section class="history-list">
+      <h2>Todas as Conversões</h2>
+      
+      <div class="history-item" *ngFor="let item of history">
+        <div class="item-icon">
+          <mat-icon>folder</mat-icon>
+        </div>
+        
+        <div class="item-info">
+          <h3>Conversão #{{ item.id }}</h3>
+          <p>{{ formatDate(item.date) }}</p>
+        </div>
+
+        <div class="item-details">
+          <span class="images-count">{{ item.images }} imagens</span>
+        </div>
+
+        <div class="item-status" [ngClass]="item.status">
+          <mat-icon *ngIf="item.status === 'completed'">check_circle</mat-icon>
+          <mat-icon *ngIf="item.status === 'processing'">sync</mat-icon>
+          <mat-icon *ngIf="item.status === 'failed'">error</mat-icon>
+        </div>
+
+        <button mat-icon-button class="item-action">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

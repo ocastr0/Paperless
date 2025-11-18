@@ -1,0 +1,106 @@
+<div class="upload-container">
+  <!-- Header -->
+  <header class="upload-header">
+    <button mat-icon-button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="header-content">
+      <h1>Converter Imagens</h1>
+      <p>Envie suas imagens para converter em talonário digital</p>
+    </div>
+  </header>
+
+  <!-- Upload Area -->
+  <div class="upload-content">
+    <div 
+      class="drop-zone"
+      [class.dragging]="isDragging"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+      (drop)="onDrop($event)"
+      @fadeIn>
+      
+      <mat-icon class="upload-icon">cloud_upload</mat-icon>
+      <h2>Arraste e solte suas imagens aqui</h2>
+      <p>ou</p>
+      
+      <input 
+        type="file" 
+        #fileInput 
+        multiple 
+        accept="image/*"
+        (change)="onFileSelected($event)"
+        style="display: none;">
+      
+      <button mat-raised-button class="select-button" (click)="fileInput.click()">
+        <mat-icon>add_photo_alternate</mat-icon>
+        Selecionar Imagens
+      </button>
+      
+      <p class="file-info">JPG, PNG, WEBP até 10MB cada</p>
+    </div>
+
+    <!-- Preview das Imagens -->
+    <div class="images-preview" *ngIf="selectedImages.length > 0" @fadeIn>
+      <div class="preview-header">
+        <h3>Imagens Selecionadas ({{ selectedImages.length }})</h3>
+        <button 
+          mat-raised-button 
+          color="primary" 
+          class="convert-button"
+          [disabled]="isProcessing"
+          (click)="convertImages()">
+          <mat-icon>transform</mat-icon>
+          {{ isProcessing ? 'Processando...' : 'Converter Agora' }}
+        </button>
+      </div>
+
+      <div class="images-grid">
+        <div 
+          class="image-card" 
+          *ngFor="let img of selectedImages; let i = index"
+          @fadeIn>
+          <img [src]="img.preview" [alt]="img.name">
+          
+          <div class="image-overlay">
+            <button 
+              mat-icon-button 
+              class="remove-button" 
+              (click)="removeImage(i)"
+              [disabled]="isProcessing">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+
+          <div class="image-info">
+            <p class="image-name">{{ img.name }}</p>
+            <p class="image-size">{{ formatFileSize(img.size) }}</p>
+          </div>
+
+          <!-- Status Badge -->
+          <div class="status-badge" [ngClass]="img.status">
+            @if (img.status === 'pending') {
+              <mat-icon>schedule</mat-icon>
+              <span>Aguardando</span>
+            }
+            @if (img.status === 'processing') {
+              <mat-icon>sync</mat-icon>
+              <span>Processando</span>
+            }
+            @if (img.status === 'completed') {
+              <mat-icon>check_circle</mat-icon>
+              <span>Concluído</span>
+            }
+          </div>
+
+          <!-- Progress Bar -->
+          <mat-progress-bar 
+            *ngIf="img.status === 'processing'" 
+            mode="indeterminate"
+            color="primary">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

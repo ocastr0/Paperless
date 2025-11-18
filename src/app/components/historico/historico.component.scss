@@ -1,0 +1,252 @@
+$primary-purple: #667eea;
+$secondary-purple: #764ba2;
+$white: #ffffff;
+$light-bg: #faf8ff;
+$text-dark: #2d3748;
+$text-light: #718096;
+$success: #10b981;
+
+.historico-container {
+  min-height: 100vh;
+  background: $light-bg;
+}
+
+.historico-header {
+  background: $white;
+  padding: 24px 40px;
+  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .back-button mat-icon {
+    color: $primary-purple;
+  }
+
+  .header-content {
+    flex: 1;
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: $text-dark;
+      margin: 0 0 4px 0;
+    }
+
+    p {
+      color: $text-light;
+      margin: 0;
+      font-size: 15px;
+    }
+  }
+
+  .new-button {
+    height: 48px;
+    padding: 0 24px;
+    background: linear-gradient(135deg, $primary-purple 0%, $secondary-purple 100%);
+    color: $white;
+    font-weight: 600;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+.historico-content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recent-section {
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 20px;
+  }
+
+  .recent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .recent-card {
+    background: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-info {
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: $text-dark;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      mat-icon {
+        color: $success;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.history-list {
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 20px;
+  }
+
+  .history-item {
+    background: $white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .item-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, $primary-purple 0%, $secondary-purple 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-icon {
+        color: $white;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .item-info {
+      flex: 1;
+
+      h3 {
+        margin: 0 0 4px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-dark;
+      }
+
+      p {
+        margin: 0;
+        font-size: 13px;
+        color: $text-light;
+      }
+    }
+
+    .item-details {
+      .images-count {
+        background: rgba(102, 126, 234, 0.1);
+        color: $primary-purple;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+
+    .item-status {
+      mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+      }
+
+      &.completed mat-icon {
+        color: $success;
+      }
+
+      &.processing mat-icon {
+        color: $primary-purple;
+        animation: spin 1s linear infinite;
+      }
+
+      &.failed mat-icon {
+        color: #ef4444;
+      }
+    }
+
+    .item-action {
+      mat-icon {
+        color: $text-light;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .historico-header {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+
+    .header-content h1 {
+      font-size: 22px;
+    }
+
+    .new-button {
+      width: 100%;
+      margin-top: 12px;
+    }
+  }
+
+  .historico-content {
+    padding: 20px;
+  }
+
+  .recent-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  }
+
+  .history-item {
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .item-details {
+      order: 4;
+      width: 100%;
+    }
+  }
+}
