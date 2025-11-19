@@ -1,15 +1,15 @@
-================================================================================
-                    GUIA DE INSTALACAO - PROJETO PAPERLESS
-================================================================================
+===============================================
+  GUIA DE INSTALACAO - PROJETO PAPERLESS
+===============================================
 
 PROJETO: Paperless (Angular 19 + TypeScript + Material Design)
 TIPO: Frontend Web Application
 TECNOLOGIA: Node.js + Angular CLI
 GERENCIADOR: npm (Node Package Manager)
 
-================================================================================
-                              PRE-REQUISITOS
-================================================================================
+===============================================
+             PRE-REQUISITOS
+===============================================
 
 1. NODE.JS (OBRIGATORIO)
    - Download: https://nodejs.org/
@@ -37,9 +37,9 @@ GERENCIADOR: npm (Node Package Manager)
    npm --version
    (deve mostrar: 10.x.x ou superior)
 
-================================================================================
-                         INSTALACAO PASSO A PASSO
-================================================================================
+===============================================
+          INSTALACAO PASSO A PASSO
+===============================================
 
 PASSO 1: INSTALAR ANGULAR CLI (GLOBAL)
 ---------------------------------------
@@ -117,9 +117,10 @@ http://localhost:4200
 PARA PARAR O SERVIDOR:
 Pressione Ctrl + C no terminal
 
-================================================================================
-                         LISTA DE DEPENDENCIAS
-================================================================================
+===============================================
+           LISTA DE DEPENDENCIAS
+===============================================
+
 
 PRINCIPAIS PACOTES (instalados automaticamente pelo npm install):
 
@@ -150,9 +151,10 @@ DESENVOLVIMENTO:
 
 TOTAL DE PACOTES: ~1500+ (incluindo dependencias transitivas)
 
-================================================================================
-                         COMANDOS UTEIS
-================================================================================
+===============================================
+         COMANDOS UTEIS
+===============================================
+
 
 BASICOS:
 --------
@@ -178,9 +180,9 @@ npm cache clean --force          # Limpa cache do npm
 ng update @angular/cli @angular/core  # Atualiza Angular
 npm outdated                     # Verifica pacotes desatualizados
 
-================================================================================
-                         SOLUCAO DE PROBLEMAS
-================================================================================
+===============================================
+               SOLUCAO DE PROBLEMAS
+===============================================
 
 ERRO: "node: command not found" ou "npm: command not found"
 SOLUCAO: Node.js nao esta instalado. Instale do site nodejs.org
@@ -222,9 +224,9 @@ SOLUCAO: Verifique o console do navegador (F12)
 - Verifique se todas as dependencias foram instaladas
 - Tente limpar o cache do navegador (Ctrl+Shift+Delete)
 
-================================================================================
-                    FERRAMENTAS RECOMENDADAS (OPCIONAL)
-================================================================================
+===============================================
+      FERRAMENTAS RECOMENDADAS (OPCIONAL)
+===============================================
 
 1. VISUAL STUDIO CODE
    - Download: https://code.visualstudio.com/
@@ -250,9 +252,10 @@ SOLUCAO: Verifique o console do navegador (F12)
    - Microsoft Edge (baseado em Chromium)
    - Firefox Developer Edition
 
-================================================================================
-                         ESTRUTURA DO PROJETO
-================================================================================
+===============================================
+            ESTRUTURA DO PROJETO
+===============================================
+
 
 paperless/
 ├── node_modules/           # Dependencias (nao versionar no Git)
@@ -284,9 +287,9 @@ PASTAS A IGNORAR NO GIT:
 - dist/
 - .angular/
 
-================================================================================
-                         WORKFLOW DE DESENVOLVIMENTO
-================================================================================
+===============================================
+         WORKFLOW DE DESENVOLVIMENTO
+===============================================
 
 1. PRIMEIRA VEZ (SETUP INICIAL):
    - Instalar Node.js
@@ -314,9 +317,10 @@ PASTAS A IGNORAR NO GIT:
    - Pasta dist/ contem arquivos prontos
    - Enviar para servidor/hosting
 
-================================================================================
-                         COMANDOS DE INSTALACAO RAPIDA
-================================================================================
+===============================================
+        COMANDOS DE INSTALACAO RAPIDA
+===============================================
+
 
 COPIE E COLE NO TERMINAL (WINDOWS):
 ------------------------------------
@@ -333,9 +337,9 @@ npm install -g @angular/cli
 npm install --legacy-peer-deps
 ng serve --open
 
-================================================================================
-                         CHECKLIST DE INSTALACAO
-================================================================================
+===============================================
+           CHECKLIST DE INSTALACAO
+===============================================
 
 [ ] Node.js instalado (verificar: node --version)
 [ ] npm funcionando (verificar: npm --version)
@@ -348,9 +352,9 @@ ng serve --open
 [ ] Navegador abrindo em localhost:4200
 [ ] Login/menu/upload funcionando
 
-================================================================================
-                         INFORMACOES ADICIONAIS
-================================================================================
+==============================================
+              INFORMACOES ADICIONAIS
+==============================================
 
 TEMPO TOTAL DE INSTALACAO: 10-15 minutos
 
@@ -388,9 +392,10 @@ SUPORTE:
 - Stack Overflow (tag: angular)
 - Angular Discord Community
 
-================================================================================
-                         NOTAS IMPORTANTES
-================================================================================
+===============================================
+            NOTAS IMPORTANTES
+===============================================
+
 
 1. NAO DELETE A PASTA node_modules MANUALMENTE
    - Use npm install para recria-la se necessario
@@ -411,9 +416,9 @@ SUPORTE:
    - Nao use pip ou requirements.txt
    - Use npm e package.json
 
-================================================================================
-                         FIM DO GUIA DE INSTALACAO
-================================================================================
+===============================================
+                FIM DO GUIA DE INSTALACAO
+===============================================
 
 Para duvidas ou problemas, consulte a documentacao oficial do Angular em:
 https://angular.dev/
